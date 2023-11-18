@@ -7,7 +7,7 @@ import { ImageGallery } from 'components/ImageGallery/ImageGallery';
 import { Button } from 'components/LoadMoreBtn/LoadMoreButton';
 
 export const App = () => {
-  
+
   const [images, setImages] = useState([]);
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
@@ -79,9 +79,11 @@ export const App = () => {
           />
         </div>
       )}
+      
       {images.length !== 0 && <ImageGallery hits={images} />}
       {loadingImage && !isLoading && <Button click={handleSabmit} />}
       <Toaster position="top-right" />
     </div>
+
   );
 };
