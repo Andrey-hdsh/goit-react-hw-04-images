@@ -54,7 +54,7 @@ export const App = () => {
       }
     };
     fetchData();
-  }, [page, query]);
+  }, [page, query , error]);
 
   const loadingImage = images.length < totalHit;
 
@@ -79,7 +79,7 @@ export const App = () => {
           />
         </div>
       )}
-      
+
       {images.length !== 0 && <ImageGallery hits={images} />}
       {loadingImage && !isLoading && <Button click={handleSabmit} />}
       <Toaster position="top-right" />
